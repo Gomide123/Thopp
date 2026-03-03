@@ -205,9 +205,13 @@ h1, h2, h3, h4 {
 }
 .icon-box-icon.white-bg i { color: var(--branco); font-size: 32px; }
 .icon-box-icon.white-transparent-bg {
-  background: var(--teal-bg);
+  background: var(--teal);
+  border-radius: 12px;
+  min-width: 48px;
+  height: 48px;
 }
 .icon-box-icon.white-transparent-bg i { color: var(--branco); }
+.icon-box-icon.white-transparent-bg svg { stroke: var(--branco); }
 .icon-box-icon.blue-bg {
   background: var(--azul-link);
 }

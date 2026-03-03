@@ -8,7 +8,8 @@
       "Bash(curl -sL -o \"c:/Users/ADM/OneDrive/Documentos/Gabriel/Thopp Elevadores/assets/images/bg-cidade.webp\" \"https://thoppelevadores.com.br/wp-content/uploads/2025/10/BG.webp\")",
       "Bash(xxd -l 4 \"c:/Users/ADM/OneDrive/Documentos/Gabriel/Thopp Elevadores/assets/images/bg-cidade.webp\")",
       "Bash(curl -sL -o \"c:/Users/ADM/OneDrive/Documentos/Gabriel/Thopp Elevadores/assets/images/equipe-original.webp\" \"https://thoppelevadores.com.br/wp-content/uploads/2025/10/thopp-equipe-scaled.webp\")",
-      "Bash(xxd -l 4 \"c:/Users/ADM/OneDrive/Documentos/Gabriel/Thopp Elevadores/assets/images/equipe-original.webp\")"
+      "Bash(xxd -l 4 \"c:/Users/ADM/OneDrive/Documentos/Gabriel/Thopp Elevadores/assets/images/equipe-original.webp\")",
+      "Bash(curl -sL \"https://thoppelevadores.com.br\")"
     ],
     "additionalDirectories": [
       "\\tmp"
