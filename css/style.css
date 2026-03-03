@@ -1337,7 +1337,7 @@ h1, h2, h3, h4 {
 }
 .peca-card img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
 }
 .peca-card .peca-body {
