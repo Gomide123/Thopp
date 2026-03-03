@@ -409,9 +409,9 @@ h1, h2, h3, h4 {
 /* ====== HERO ====== */
 .hero {
   position: relative;
-  height: 82vh;
-  min-height: 550px;
-  max-height: 780px;
+  height: 88vh;
+  min-height: 600px;
+  max-height: 850px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -531,10 +531,49 @@ h1, h2, h3, h4 {
 }
 
 /* ====== SOBRE (FUNDO ESCURO) ====== */
+/* Sobre info - white background */
+.sobre-info {
+  padding: 60px 0;
+  background: var(--branco);
+}
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.sobre-left h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 46px;
+  color: var(--azul-escuro);
+  margin-bottom: 16px;
+}
+.sobre-left > p {
+  font-size: 18px;
+  color: #4B5563;
+  margin-bottom: 24px;
+  line-height: 28px;
+}
+.sobre-left .icon-box-text h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--azul-escuro);
+}
+.sobre-left .icon-box-text p {
+  color: var(--cinza-body);
+}
+.sobre-right img {
+  border-radius: var(--radius-lg);
+  width: 100%;
+}
+
+/* Sobre cards - dark background */
 .sobre {
   position: relative;
   padding: 60px 0;
-  background: url('../assets/images/equipe.webp') center/cover no-repeat;
+  background: url('../assets/images/bg-cidade.webp') center/cover no-repeat;
 }
 .sobre-overlay {
   position: absolute;
@@ -543,40 +582,6 @@ h1, h2, h3, h4 {
   opacity: 0.5;
 }
 .sobre-inner { position: relative; z-index: 2; }
-.sobre-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  align-items: center;
-}
-.sobre-left h2 {
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 46px;
-  color: var(--bg-branco);
-  margin-bottom: 16px;
-}
-.sobre-left > p {
-  font-size: 18px;
-  color: var(--bg-branco);
-  margin-bottom: 24px;
-  line-height: 28px;
-}
-.sobre-left .icon-box-inline {
-  margin-top: 8px;
-}
-.sobre-left .icon-box-text h3 {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--branco);
-}
-.sobre-left .icon-box-text p {
-  color: rgba(255,255,255,0.85);
-}
-.sobre-right img {
-  border-radius: var(--radius-lg);
-  width: 100%;
-}
 
 /* Sobre - services carousel */
 .sobre-servicos-swiper {
