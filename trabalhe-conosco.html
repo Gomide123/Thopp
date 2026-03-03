@@ -36,7 +36,7 @@
   </header>
 
   <!-- ====== HERO BANNER ====== -->
-  <section class="page-hero" style="background-image: url('assets/images/hero-trabalhe.webp');">
+  <section class="page-hero" style="background-image: url('assets/images/hero-trabalhe-original.webp');">
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <h1>Trabalhe Conosco</h1>
@@ -48,44 +48,61 @@
   <section class="page-section bg-light">
     <div class="container">
       <div class="trabalhe-grid">
-        <!-- Benefícios -->
-        <div class="trabalhe-beneficios">
-          <h3>Por que trabalhar na Thopp?</h3>
-          <div class="beneficio-item">
-            <div class="beneficio-icon"><i class="fas fa-chart-line"></i></div>
-            <div class="beneficio-text">
-              <h4>Crescimento Profissional</h4>
-              <p>Oportunidades de desenvolvimento e carreira em uma empresa em expansão.</p>
+        <!-- Coluna Esquerda: Benefícios + Contato + Mapa -->
+        <div class="trabalhe-left">
+          <!-- Benefícios -->
+          <div class="trabalhe-beneficios">
+            <h3>Por que trabalhar na Thopp?</h3>
+            <div class="beneficio-item">
+              <div class="beneficio-icon"><i class="fas fa-chart-line"></i></div>
+              <div class="beneficio-text">
+                <h4>Crescimento Profissional</h4>
+                <p>Oportunidades de desenvolvimento e carreira em uma empresa em expansão.</p>
+              </div>
+            </div>
+            <div class="beneficio-item">
+              <div class="beneficio-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="beneficio-text">
+                <h4>Treinamento Contínuo</h4>
+                <p>Investimos no desenvolvimento técnico e profissional de nossa equipe.</p>
+              </div>
+            </div>
+            <div class="beneficio-item">
+              <div class="beneficio-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="beneficio-text">
+                <h4>Localização Estratégica</h4>
+                <p>Atuação em Belo Horizonte e região metropolitana.</p>
+              </div>
             </div>
           </div>
-          <div class="beneficio-item">
-            <div class="beneficio-icon"><i class="fas fa-graduation-cap"></i></div>
-            <div class="beneficio-text">
-              <h4>Treinamento Contínuo</h4>
-              <p>Investimos no desenvolvimento técnico e profissional de nossa equipe.</p>
-            </div>
+
+          <!-- Contato Direto -->
+          <div class="contato-direto-card">
+            <h3>Contato Direto</h3>
+            <p>Para dúvidas sobre vagas, entre em contato:</p>
+            <a href="mailto:curriculos@thoppelevadores.com.br" class="contato-email">
+              <i class="fas fa-envelope"></i> curriculos@thoppelevadores.com.br
+            </a>
           </div>
-          <div class="beneficio-item">
-            <div class="beneficio-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div class="beneficio-text">
-              <h4>Localização Estratégica</h4>
-              <p>Atuação em Belo Horizonte e região metropolitana.</p>
-            </div>
+
+          <!-- Google Maps -->
+          <div class="trabalhe-mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.1575452567035!2d-43.960488399999996!3d-19.9177648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6999414b3f699%3A0xbc54fbf1c8e108fa!2sThopp%20Elevadores!5e0!3m2!1spt-BR!2sbr!4v1758841651950!5m2!1spt-BR!2sbr" width="100%" height="350" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
 
-        <!-- Formulário -->
+        <!-- Coluna Direita: Formulário -->
         <div class="trabalhe-form-card">
           <h3>Envie seu currículo</h3>
           <form id="trabalhe-form">
             <div class="form-row">
               <div class="form-group">
                 <label>Nome completo</label>
-                <input type="text" placeholder="Seu nome completo" required>
+                <input type="text" placeholder="Nome" required>
               </div>
               <div class="form-group">
                 <label>E-mail</label>
-                <input type="email" placeholder="seu@email.com" required>
+                <input type="email" placeholder="E-mail" required>
               </div>
             </div>
             <div class="form-row">
@@ -112,30 +129,19 @@
             </div>
             <div class="form-group">
               <label>Formação</label>
-              <textarea placeholder="Sua formação acadêmica" rows="2"></textarea>
+              <textarea placeholder="Sua formação acadêmica" rows="3"></textarea>
             </div>
             <div class="form-group">
               <label>Mensagem adicional</label>
-              <textarea placeholder="Alguma informação adicional?" rows="2"></textarea>
+              <textarea placeholder="Informações adicionais que você queira compartilhar" rows="3"></textarea>
             </div>
             <div class="form-group">
-              <label>Anexar Currículo</label>
-              <div class="file-upload-area" onclick="document.getElementById('file-input').click()">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <p>Clique para selecionar o arquivo</p>
-                <p class="file-hint">PDF (máx. 10MB)</p>
-                <input type="file" id="file-input" accept=".pdf" style="display: none;">
-              </div>
+              <label>Anexar Currículo (PDF) - Máx. 10MB</label>
+              <input type="file" id="file-input" accept=".pdf" class="file-input-standard">
             </div>
-            <button type="submit" class="btn btn-primary btn-full">Enviar currículo</button>
+            <button type="submit" class="btn btn-primary btn-full">Enviar currículo <i class="fas fa-arrow-right"></i></button>
           </form>
         </div>
-      </div>
-
-      <!-- Contato Direto -->
-      <div class="contato-direto">
-        <h3>Contato Direto</h3>
-        <p>Envie seu currículo também para: <a href="mailto:curriculos@thoppelevadores.com.br">curriculos@thoppelevadores.com.br</a></p>
       </div>
     </div>
   </section>

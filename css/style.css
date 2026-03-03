@@ -1717,9 +1717,14 @@ h1, h2, h3, h4 {
 /* ====== TRABALHE CONOSCO PAGE ====== */
 .trabalhe-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
-  margin-top: 40px;
+  align-items: start;
+}
+.trabalhe-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 .trabalhe-beneficios {
   background: var(--branco);
@@ -1825,27 +1830,57 @@ h1, h2, h3, h4 {
   margin-top: 4px;
 }
 
-/* Contato direto section */
-.contato-direto {
-  text-align: center;
-  margin-top: 40px;
-  padding: 32px;
+/* Contato direto card */
+.contato-direto-card {
   background: var(--branco);
   border-radius: var(--radius-lg);
+  padding: 32px;
   box-shadow: var(--sombra-card);
 }
-.contato-direto h3 {
+.contato-direto-card h3 {
   font-size: 20px;
   font-weight: 700;
   color: var(--azul-escuro);
   margin-bottom: 8px;
 }
-.contato-direto a {
+.contato-direto-card p {
+  font-size: 15px;
+  color: var(--cinza-body);
+  margin-bottom: 16px;
+}
+.contato-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--teal);
   font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
 }
-.contato-direto a:hover {
+.contato-email:hover {
   color: var(--teal-hover);
+}
+.contato-email i {
+  font-size: 18px;
+}
+
+/* Google Maps */
+.trabalhe-mapa {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+}
+.trabalhe-mapa iframe {
+  display: block;
+}
+
+/* Standard file input */
+.file-input-standard {
+  width: 100%;
+  padding: 10px 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--cinza-body);
 }
 
 /* ====== RESPONSIVIDADE ====== */
@@ -1871,6 +1906,7 @@ h1, h2, h3, h4 {
   .project-highlights-grid { grid-template-columns: 1fr 1fr; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .trabalhe-grid { grid-template-columns: 1fr; }
+  .trabalhe-left { order: -1; }
 }
 
 @media (max-width: 767px) {
