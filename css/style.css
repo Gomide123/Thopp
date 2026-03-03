@@ -1164,23 +1164,24 @@ h1, h2, h3, h4 {
   line-height: 28px;
 }
 
-/* Sub-pages: top bar dark blue + nav white */
+/* Sub-pages: transparent header over hero (same as homepage) */
 .header--solid {
-  background: var(--branco);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 100;
 }
-.header--solid .header-top {
-  display: flex;
-  background: var(--azul-escuro);
-}
-.header--solid .header-nav { background: var(--branco); }
-.header--solid .nav-menu li a { color: #374151; font-weight: 700; }
+.header--solid .header-top { display: none; }
+.header--solid .header-nav { background: transparent; }
+.header--solid .nav-menu li a { color: var(--branco); font-weight: 700; }
 .header--solid .nav-menu li a:hover { color: var(--teal); }
-.header--solid .nav-menu li a.active { color: #374151; }
-.header--solid .nav-menu li a.active::after { background: var(--azul-escuro); }
+.header--solid .nav-menu li a.active { color: var(--branco); }
+.header--solid .nav-menu li a.active::after { background: var(--branco); }
 .header--solid .nav-menu li a::after { background: var(--teal); }
-.header--solid .logo img { filter: none; }
-.header--solid .menu-toggle span { background: var(--azul-escuro); }
+.header--solid .logo img { filter: brightness(0) invert(1); }
+.header--solid .menu-toggle span { background: var(--branco); }
 
 /* ====== SERVICE PAGE ====== */
 .page-section {
