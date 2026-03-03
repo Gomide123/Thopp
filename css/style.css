@@ -409,9 +409,9 @@ h1, h2, h3, h4 {
 /* ====== HERO ====== */
 .hero {
   position: relative;
-  height: 88vh;
-  min-height: 600px;
-  max-height: 850px;
+  height: 82vh;
+  min-height: 550px;
+  max-height: 780px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -443,7 +443,7 @@ h1, h2, h3, h4 {
   position: absolute;
   inset: 0;
   background: var(--azul-escuro);
-  opacity: 0.35;
+  opacity: 0.45;
   z-index: 1;
 }
 .hero-content {
