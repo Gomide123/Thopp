@@ -1210,7 +1210,6 @@ h1, h2, h3, h4 {
 .service-page-card .card-image {
   position: relative;
   height: 280px;
-  overflow: hidden;
 }
 .service-page-card .card-image img {
   width: 100%;
