@@ -19,17 +19,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ====== SCROLL TO TOP ======
+  // ====== HEADER SCROLL (transparent → white) ======
+  var header = document.getElementById('header');
   var scrollTop = document.getElementById('scroll-top');
-  if (scrollTop) {
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 400) {
+
+  window.addEventListener('scroll', function () {
+    var scrollY = window.scrollY;
+
+    // Header: transparent over hero, white after scrolling
+    if (header) {
+      if (scrollY > 80) {
+        header.classList.add('header--scrolled');
+      } else {
+        header.classList.remove('header--scrolled');
+      }
+    }
+
+    // Scroll to top button
+    if (scrollTop) {
+      if (scrollY > 400) {
         scrollTop.classList.add('visible');
       } else {
         scrollTop.classList.remove('visible');
       }
-    });
-  }
+    }
+  });
 
   // ====== FORM SUBMIT (generic) ======
   var forms = document.querySelectorAll('form');
