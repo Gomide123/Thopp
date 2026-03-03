@@ -1,0 +1,8 @@
+# Arquivos originais baixados do site (muito grandes para o GitHub)
+Thopp Elevadores _ Manutenção e Modernização de Elevadores em BH THOPP Elevadores _ Manutenção e Modernização de Elevadores em BH_files/
+
+# Outros
+*.py
+.DS_Store
+Thumbs.db
+desktop.ini
