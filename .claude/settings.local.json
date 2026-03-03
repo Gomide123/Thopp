@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL -o crea-mg-logo.webp \"https://thoppelevadores.com.br/wp-content/uploads/2025/10/crea-minas-logotipo-horizontal-2-300x84.webp\")",
+      "Bash(curl -s \"https://thoppelevadores.com.br/projetos-e-modernizacoes/\")",
+      "Bash(curl -sL -o \"c:/Users/ADM/OneDrive/Documentos/Gabriel/Thopp Elevadores/assets/images/hero-trabalhe-original.webp\" \"https://thoppelevadores.com.br/wp-content/uploads/2025/09/Foto-Thopp-Corporativo-fachada-1024x769.webp\")",
+      "Bash(xxd -l 4 \"c:/Users/ADM/OneDrive/Documentos/Gabriel/Thopp Elevadores/assets/images/hero-trabalhe-original.webp\")",
+      "Bash(curl -sL -o \"c:/Users/ADM/OneDrive/Documentos/Gabriel/Thopp Elevadores/assets/images/bg-cidade.webp\" \"https://thoppelevadores.com.br/wp-content/uploads/2025/10/BG.webp\")",
+      "Bash(xxd -l 4 \"c:/Users/ADM/OneDrive/Documentos/Gabriel/Thopp Elevadores/assets/images/bg-cidade.webp\")",
+      "Bash(curl -sL -o \"c:/Users/ADM/OneDrive/Documentos/Gabriel/Thopp Elevadores/assets/images/equipe-original.webp\" \"https://thoppelevadores.com.br/wp-content/uploads/2025/10/thopp-equipe-scaled.webp\")",
+      "Bash(xxd -l 4 \"c:/Users/ADM/OneDrive/Documentos/Gabriel/Thopp Elevadores/assets/images/equipe-original.webp\")"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  }
+}
