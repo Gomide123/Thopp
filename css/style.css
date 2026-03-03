@@ -1430,6 +1430,7 @@ h1, h2, h3, h4 {
 .footer-crea img {
   max-height: 50px;
   margin: 0 auto;
+  filter: brightness(0) invert(1);
 }
 .footer-privacy {
   text-align: center;
