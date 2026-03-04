@@ -9,12 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
     menuToggle.addEventListener('click', function () {
       menuToggle.classList.toggle('active');
       navMenu.classList.toggle('active');
+      document.getElementById('header').classList.toggle('header--menu-open');
     });
 
     navMenu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         menuToggle.classList.remove('active');
         navMenu.classList.remove('active');
+        document.getElementById('header').classList.remove('header--menu-open');
       });
     });
   }
