@@ -114,43 +114,62 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  // ====== SWIPER: DIFERENCIAIS (1 visível, com setas) ======
-  new Swiper('.diferenciais-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: '.dif-next',
-      prevEl: '.dif-prev',
-    },
-    breakpoints: {
-      768: { slidesPerView: 2, spaceBetween: 20 },
-    },
-  });
+  // ====== CARROSSEL: DIFERENCIAIS (1 visível, com setas) ======
+  (function() {
+    var items = document.querySelectorAll('#dif-carousel .icon-box-inline');
+    if (!items.length) return;
+    var current = 0;
+    var total = items.length;
+    var autoTimer;
 
-  // ====== SWIPER: PROJETOS (scroll contínuo, 4 visíveis) ======
+    function showSlide(index) {
+      items.forEach(function(item) { item.style.display = 'none'; });
+      items[index].style.display = 'flex';
+    }
+
+    document.querySelector('.dif-next').addEventListener('click', function() {
+      current = (current + 1) % total;
+      showSlide(current);
+      resetAuto();
+    });
+
+    document.querySelector('.dif-prev').addEventListener('click', function() {
+      current = (current - 1 + total) % total;
+      showSlide(current);
+      resetAuto();
+    });
+
+    function startAuto() {
+      autoTimer = setInterval(function() {
+        current = (current + 1) % total;
+        showSlide(current);
+      }, 5000);
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      startAuto();
+    }
+
+    showSlide(0);
+    startAuto();
+  })();
+
+  // ====== SWIPER: PROJETOS (scroll contínuo fluido) ======
   new Swiper('.projetos-swiper', {
-    slidesPerView: 4,
-    spaceBetween: 20,
+    slidesPerView: 3,
+    spaceBetween: 30,
     loop: true,
-    speed: 2500,
+    speed: 8000,
+    allowTouchMove: true,
     autoplay: {
       delay: 0,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: '.proj-next',
-      prevEl: '.proj-prev',
+      disableOnInteraction: true,
     },
     breakpoints: {
       0: { slidesPerView: 1, spaceBetween: 16 },
-      480: { slidesPerView: 2, spaceBetween: 16 },
-      768: { slidesPerView: 3, spaceBetween: 20 },
-      1024: { slidesPerView: 4, spaceBetween: 20 },
+      480: { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, spaceBetween: 30 },
     },
   });
 
@@ -191,6 +210,20 @@ document.addEventListener('DOMContentLoaded', function () {
       768: { slidesPerView: 3, spaceBetween: 20 },
       1024: { slidesPerView: 4, spaceBetween: 20 },
     },
+  });
+
+  // ====== READ MORE TOGGLE (DEPOIMENTOS) ======
+  document.querySelectorAll('.depoimento-read-more').forEach(function(btn) {
+    var text = btn.previousElementSibling;
+    btn.addEventListener('click', function() {
+      if (text.classList.contains('expanded')) {
+        text.classList.remove('expanded');
+        btn.textContent = 'Consulte Mais informação';
+      } else {
+        text.classList.add('expanded');
+        btn.textContent = 'Mostrar menos';
+      }
+    });
   });
 
   // ====== COUNTER ANIMATION ======
