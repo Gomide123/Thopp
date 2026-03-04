@@ -236,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var duration = 2000;
       var step = target / (duration / 16);
       var current = 0;
+      counter.textContent = '0';
 
       function updateCounter() {
         current += step;
