@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesPerView: 8,
     spaceBetween: 20,
     loop: true,
-    speed: 2500,
+    speed: 4000,
+    freeMode: true,
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
@@ -98,21 +99,17 @@ document.addEventListener('DOMContentLoaded', function () {
   // ====== SWIPER: SOBRE SERVIÇOS (3 visíveis, com setas) ======
   new Swiper('.sobre-servicos-swiper', {
     slidesPerView: 3,
+    slidesPerGroup: 3,
     spaceBetween: 30,
     loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
     navigation: {
       nextEl: '.sobre-next',
       prevEl: '.sobre-prev',
     },
     breakpoints: {
-      0: { slidesPerView: 1, spaceBetween: 16 },
-      768: { slidesPerView: 2, spaceBetween: 20 },
-      1024: { slidesPerView: 3, spaceBetween: 30 },
+      0: { slidesPerView: 1, slidesPerGroup: 1, spaceBetween: 16 },
+      768: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 30 },
     },
   });
 
@@ -124,18 +121,39 @@ document.addEventListener('DOMContentLoaded', function () {
     var total = items.length;
     var autoTimer;
 
+    var direction = 'next';
+
     function showSlide(index) {
-      items.forEach(function(item) { item.style.display = 'none'; });
-      items[index].style.display = 'flex';
+      var exitX = direction === 'next' ? '-30px' : '30px';
+      var enterX = direction === 'next' ? '30px' : '-30px';
+
+      items.forEach(function(item) {
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(' + exitX + ')';
+        setTimeout(function() { item.style.display = 'none'; }, 400);
+      });
+      setTimeout(function() {
+        items[index].style.transition = 'none';
+        items[index].style.transform = 'translateX(' + enterX + ')';
+        items[index].style.opacity = '0';
+        items[index].style.display = 'flex';
+        requestAnimationFrame(function() {
+          items[index].style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          items[index].style.transform = 'translateX(0)';
+          items[index].style.opacity = '1';
+        });
+      }, 400);
     }
 
     document.querySelector('.dif-next').addEventListener('click', function() {
+      direction = 'next';
       current = (current + 1) % total;
       showSlide(current);
       resetAuto();
     });
 
     document.querySelector('.dif-prev').addEventListener('click', function() {
+      direction = 'prev';
       current = (current - 1 + total) % total;
       showSlide(current);
       resetAuto();
@@ -143,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function startAuto() {
       autoTimer = setInterval(function() {
+        direction = 'next';
         current = (current + 1) % total;
         showSlide(current);
       }, 5000);
@@ -180,7 +199,9 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesPerView: 8,
     spaceBetween: 20,
     loop: true,
-    speed: 2500,
+    speed: 4000,
+    freeMode: true,
+    freeModeMomentum: false,
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
@@ -228,9 +249,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ====== COUNTER ANIMATION ======
+  // ====== COUNTER ANIMATION (repete a cada 7s) ======
   var statNumbers = document.querySelectorAll('.stat-number');
-  var countersStarted = false;
+  var counterInterval = null;
 
   function animateCounters() {
     statNumbers.forEach(function (counter) {
@@ -258,9 +279,16 @@ document.addEventListener('DOMContentLoaded', function () {
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting && !countersStarted) {
-            countersStarted = true;
-            animateCounters();
+          if (entry.isIntersecting) {
+            if (!counterInterval) {
+              animateCounters();
+              counterInterval = setInterval(animateCounters, 7000);
+            }
+          } else {
+            if (counterInterval) {
+              clearInterval(counterInterval);
+              counterInterval = null;
+            }
           }
         });
       },
